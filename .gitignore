@@ -1,0 +1,20 @@
+# IntelliJ
+out/
+.idea/
+*.iml
+
+# Compiled class files
+*.class
+
+# Logs
+*.log
+
+# Mac OS
+.DS_Store
+
+# Maven / Gradle build folders
+/target/
+/build/
+
+# IDE-specific folders
+.vscode/

@@ -1,5 +1,13 @@
 package uno;
 
+/**
+ *  Represents the color of an UNO card.
+ *  Possible values:
+ *  - RED, GREEN, BLUE, YELLOW: standard colors
+ *  - WILD: used for wild and wild draw four cards
+ *
+ *  toString() is overridden to provide a human-readable string for each value.
+ */
 public enum Color {
     RED,
     GREEN,

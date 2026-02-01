@@ -24,6 +24,7 @@ public class Card {
      * Returns the color of this card
      */
     public Color getColor() {
+
         return color;
     }
 
@@ -31,6 +32,7 @@ public class Card {
      *  Returns the value of this card.
      */
     public Value getValue() {
+
         return value;
     }
 
@@ -47,24 +49,19 @@ public class Card {
      * @return true if this card can be played, false otherwise
      */
     public boolean canPlayOn(Card topCard, Color currentColor) {
-        // wild cards can always be played
         if (this.value == Value.WILD || this.value == Value.WILD_DRAW_FOUR) {
             return true;
         }
 
-        // match the current color
         if (this.color == currentColor) {
             return true;
         }
 
-        // match the value of the top card
         if (this.value == topCard.getValue()) {
             return true;
         }
 
-        // no matches cant play card
         return false;
-
     }
 
     /**

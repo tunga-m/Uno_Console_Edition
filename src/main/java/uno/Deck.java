@@ -59,13 +59,25 @@ public class Deck {
     /**
      * Draws the top card from the deck.
      * Removes the card from the deck and returns it.
-     * @return the drawn card, or null if deck is empty
+     * @return the drawn card, or refill deck if deck is empty
      */
-    public Card drawCard() {
+    public Card drawCard(DiscardPile discardPile) {
         if (isEmpty()) {
-            return null; // no cards left in deck
+            refillFromDiscard(discardPile); // no cards left in deck
         }
-        return cards.removeFirst();
+        return cards.remove(0);
+    }
+
+    /**
+     * Refills the deck using cards from the discard pile when the deck is empty.
+     * Leaves the top card in the discard pile.
+     * @param discardPile the discard pule to take cards from
+     */
+    public void refillFromDiscard(DiscardPile discardPile) {
+        List<Card> refillCards = discardPile.removeAllExceptTop(); //get all cards except top card
+
+        cards.addAll(refillCards);
+        shuffle();
     }
 
     /**
